@@ -15,9 +15,9 @@ const config = {
   favicon: 'images/logo/logo.png',
 
   // Set the production url of your site here
-  url: 'https://wrteamdev.github.io', // Your GitHub Pages URL
+  url: 'https://wrteam-in.github.io', // Your GitHub Pages URL
   baseUrl: '/eSchool-SaaS-Doc/', // The repository name, preceded by a slash
-  organizationName: 'WRTeam.in', // Your GitHub username
+  organizationName: 'WRTeam-in', // Your GitHub username
   projectName: 'eSchool-SaaS-Doc', // Your repository name
   trailingSlash: true,
   deploymentBranch: "gh-pages", // Deployment branch for GitHub Pages
