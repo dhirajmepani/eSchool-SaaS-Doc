@@ -4,27 +4,23 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'eSchool SaaS Documentation',
+  tagline: 'Documentation for eSchool SaaS Installation, Setup and Usage',
+  favicon: 'images/logo/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
+  url: 'https://wrteamdev.github.io', // Your GitHub Pages URL
+  baseUrl: '/eSchool-SaaS-Doc/', // The repository name, preceded by a slash
+  organizationName: 'WRTeam.in', // Your GitHub username
+  projectName: 'eSchool-SaaS-Doc', // Your repository name
+  trailingSlash: true,
+  deploymentBranch: "gh-pages", // Deployment branch for GitHub Pages
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -36,33 +32,44 @@ const config = {
     locales: ['en'],
   },
 
+  // Add local search plugin with a unique ID to avoid conflicts
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'installation',
+        path: 'installation', // Folder with markdown files
+        routeBasePath: 'installation', // URL path
+        sidebarPath: require.resolve('./installationSidebar.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'schooladmin',
+        path: 'schooladmin', // Another folder
+        routeBasePath: 'schooladmin',
+        sidebarPath: require.resolve('./schooladminSidebar.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'superadmin',
+        path: 'superadmin', // Another folder
+        routeBasePath: 'superadmin',
+        sidebarPath: require.resolve('./superadminSidebar.js'),
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        docs: false,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -74,78 +81,77 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'images/logo/logo.png',
       navbar: {
-        title: 'My Site',
+        title: 'eSchool SaaS',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'eSchool SaaS Logo',
+          src: 'images/logo/logo.png',
         },
         items: [
           {
+            docsPluginId: 'installation',
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'installationSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Installation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            docsPluginId: 'superadmin',
+            type: 'docSidebar',
+            sidebarId: 'superadminSidebar',
+            position: 'left',
+            label: 'Super Admin',
+          },
+          {
+            docsPluginId: 'schooladmin',
+            type: 'docSidebar',
+            sidebarId: 'schooladminSidebar',
+            position: 'left',
+            label: 'School Admin',
+          },
+          {
+            type: "search",
+            position: "right",
+          },
+          {
+            href: 'https://www.wrteam.in/',
+            label: 'WRTeam',
             position: 'right',
           },
         ],
       },
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        style: "dark",
+        copyright: `Copyright © ${new Date().getFullYear()} WRTeam. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
     }),
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+
+      ({
+        hashed: true,
+        docsRouteBasePath: ["installation", "superadmin", "schooladmin"],
+        docsDir: ["installation", "superadmin", "schooladmin"],
+        docsPluginIdForPreferredVersion: "installation",
+      }),
+    ],
+  ],
+
+  // Add Font Awesome for icons
+  stylesheets: [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+  ],
 };
 
 export default config;
