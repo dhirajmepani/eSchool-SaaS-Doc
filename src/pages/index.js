@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
-import logo from "../../static/images/logo/favicon.png";
+import logo from "../../static/images/logo/logo.png";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -162,8 +162,8 @@ function SupportSection() {
           >
             Support
           </Link>
-          <Link className="button button--secondary button--lg" to="/installation/faqs">
-            FAQs
+          <Link className="button button--secondary button--lg" to="/installation/contact-us">
+            Contact Us
           </Link>
         </div>
       </div>

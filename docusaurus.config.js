@@ -12,7 +12,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'eSchool SaaS Documentation',
   tagline: 'Documentation for eSchool SaaS Installation, Setup and Usage',
-  favicon: 'images/logo/favicon.png',
+  favicon: 'images/logo/logo.png',
 
   // Set the production url of your site here
   url: 'https://wrteamdev.github.io', // Your GitHub Pages URL
@@ -81,12 +81,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'images/logo/logo.png',
+      image: 'images/logo/transparent_logo.svg',
       navbar: {
         title: 'eSchool SaaS',
         logo: {
           alt: 'eSchool SaaS Logo',
-          src: 'images/logo/logo.png',
+          src: 'images/logo/transparent_logo.svg',
         },
         items: [
           {
@@ -130,7 +130,7 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       colorMode: {
-        defaultMode: "dark",
+        defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
