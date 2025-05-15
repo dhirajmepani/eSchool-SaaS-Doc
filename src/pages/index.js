@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -6,10 +6,118 @@ import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 import logo from "../../static/images/logo/logo.png";
 
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const headerRef = useRef(null);
+  const lastMousePos = useRef({ x: 0, y: 0 });
+  const velocity = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const createIcon = (x, y, velocityX = 0, velocityY = 0) => {
+      const el = document.createElement("div");
+      el.className = styles.cursorIcon;
+      const randomIcon = Math.floor(Math.random() * 3); // 0: book, 1: pencil, 2: graduation
+      const size = Math.random() * 6 + 14; // Random size between 14-20px
+
+      el.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="${getIconPath(randomIcon)}" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      </svg>`;
+
+      // Calculate position with velocity influence
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 20 + 5; // Closer to cursor (5-25px)
+      const offsetX = Math.cos(angle) * distance;
+      const offsetY = Math.sin(angle) * distance;
+
+      el.style.left = `${x + offsetX}px`;
+      el.style.top = `${y + offsetY}px`;
+      el.style.position = 'fixed';
+      el.style.pointerEvents = 'none';
+      el.style.color = 'rgba(255, 255, 255, 0.85)';
+      el.style.transform = 'scale(0) rotate(0deg)';
+      el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      el.style.filter = 'blur(0px)';
+      el.style.opacity = '0';
+
+      document.body.appendChild(el);
+
+      // Calculate random rotation and movement
+      const rotation = (Math.random() - 0.5) * 180; // Less rotation
+      const moveX = (Math.random() - 0.5) * 60 + velocityX; // Less spread
+      const moveY = -Math.random() * 60 - 30 + velocityY; // Less vertical movement
+
+      // Trigger animation
+      requestAnimationFrame(() => {
+        el.style.transform = `scale(1) rotate(${rotation}deg) translate(${moveX}px, ${moveY}px)`;
+        el.style.opacity = '1';
+        el.style.filter = 'blur(0.5px)'; // Less blur
+      });
+
+      // Remove after animation
+      setTimeout(() => {
+        el.remove();
+      }, 800);
+    };
+
+    const handleMouseMove = (e) => {
+      // Calculate velocity
+      const currentX = e.clientX;
+      const currentY = e.clientY;
+      velocity.current = {
+        x: currentX - lastMousePos.current.x,
+        y: currentY - lastMousePos.current.y
+      };
+      lastMousePos.current = { x: currentX, y: currentY };
+
+      // Create icons based on velocity
+      const speed = Math.sqrt(velocity.current.x ** 2 + velocity.current.y ** 2);
+      const numIcons = Math.min(Math.floor(speed / 8), 3); // Fewer icons, higher speed threshold
+
+      for (let i = 0; i < numIcons; i++) {
+        setTimeout(() => {
+          createIcon(currentX, currentY, velocity.current.x, velocity.current.y);
+        }, i * 40);
+      }
+    };
+
+    const handleMouseEnter = (e) => {
+      // Create initial burst of icons
+      for (let i = 0; i < 8; i++) { // Fewer initial icons
+        setTimeout(() => {
+          createIcon(e.clientX, e.clientY);
+        }, i * 40);
+      }
+    };
+
+    header.addEventListener("mousemove", handleMouseMove);
+    header.addEventListener("mouseenter", handleMouseEnter);
+
+    return () => {
+      header.removeEventListener("mousemove", handleMouseMove);
+      header.removeEventListener("mouseenter", handleMouseEnter);
+    };
+  }, []);
+
+  // Helper function to get SVG path data
+  const getIconPath = (idx) => {
+    switch (idx) {
+      case 0: // book
+        return "M19.8978 16H7.89778C6.96781 16 6.50282 16 6.12132 16.1022C5.08604 16.3796 4.2774 17.1883 4 18.2235 M8 7H16 M8 10.5H13 M10 22C7.17157 22 5.75736 22 4.87868 21.1213C4 20.2426 4 18.8284 4 16V8C4 5.17157 4 3.75736 4.87868 2.87868C5.75736 2 7.17157 2 10 2H14C16.8284 2 18.2426 2 19.1213 2.87868C20 3.75736 20 5.17157 20 8M14 22C16.8284 22 18.2426 22 19.1213 21.1213C20 20.2426 20 18.8284 20 16V12";
+      case 1: // pencil
+        return "M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z";
+      case 2: // graduation
+        return "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z";
+      default:
+        return "";
+    }
+  };
+
   return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header ref={headerRef} className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <div className={styles.logoContainer}>
           <img

@@ -61,6 +61,15 @@ const config = {
         sidebarPath: require.resolve('./superadminSidebar.js'),
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'changelog',
+        path: 'changelog',
+        routeBasePath: 'changelog',
+        sidebarItemsGenerator: async () => [],
+      },
+    ],
   ],
 
   presets: [
@@ -109,6 +118,13 @@ const config = {
             sidebarId: 'schooladminSidebar',
             position: 'left',
             label: 'School Admin',
+          },
+          {
+            docId: 'index',
+            docsPluginId: 'changelog',
+            type: 'doc',
+            position: 'left',
+            label: 'Changelog',
           },
           {
             type: "search",
