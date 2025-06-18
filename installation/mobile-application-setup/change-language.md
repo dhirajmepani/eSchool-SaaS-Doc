@@ -2,7 +2,37 @@
 sidebar_position: 10
 ---
 
-# Change Language in App
+# 🌍 Change App Language
+
+## 📋 Overview
+Learn how to customize and add new languages to your app's localization system.
+
+## 🔄 Steps to Change Language
+
+### 1️⃣ Add New Language
+1. Navigate to `lib/l10n/`
+2. Create a new language file (e.g., `app_es.arb` for Spanish)
+3. Add translations for all strings
+
+### 2️⃣ Configure Language Support
+1. Update `l10n.yaml` to include new language
+2. Run `flutter gen-l10n` to generate language files
+3. Rebuild the app to see changes
+
+## 📝 Notes
+- Keep translations consistent
+- Test all screens with new language
+- Maintain language files updated
+
+## 🔧 Example Language File
+```arb
+{
+    "appName": "e-School",
+    "welcome": "Welcome to e-School",
+    "login": "Login",
+    "logout": "Logout"
+}
+```
 
 1. By default, the application language is English. If you want to change the default language, go to `lib/utils/appLanguages.dart` and add your respective language's code shown in below image. Get your language code from here: [https://developers.google.com/admin-sdk/directory/v1/languages](https://developers.google.com/admin-sdk/directory/v1/languages).
 

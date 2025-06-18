@@ -2,41 +2,81 @@
 sidebar_position: 6
 ---
 
-# How to Setup Custom Domain
+# 🌐 How to Setup Custom Domain
 
-## Domain Type
+## 📋 Overview
+Learn how to configure custom domains for schools in your e-School SaaS system.
+
+## 🏷️ Domain Types
 
 ![e-School SaaS](../static/images/installation/customdomain.png)
 
 ![e-School SaaS](../static/images/installation/schoolDomain.png)
 
-When creating a school, the admin has the option to specify the domain type for the school's website and also school can choose the domain type from General Settings Sections. They can choose between two domain types:
+When creating a school, the admin has the option to specify the domain type for the school's website. Schools can also choose the domain type from General Settings. They can choose between two domain types:
 
-**Default Domain:** This is a predefined domain provided by the system (e.g., schoolname.yoursystemdomain.com). It is automatically set up and requires no additional configuration from the admin.
+### 🔗 Default Domain
+This is a predefined domain provided by the system (e.g., `schoolname.yoursystemdomain.com`). 
+- ✅ Automatically set up
+- ✅ No additional configuration required
+- ✅ Ready to use immediately
 
-**Custom Domain:** If the school has its own domain, the admin can enter it during the setup process and also school can setup it from general settings. However, before using a custom domain, it must be properly configured to point to the server's IP address where the system is hosted. Once the domain's DNS settings are correctly updated and verified, the custom domain can be used as the school's official website address.
+### 🎯 Custom Domain
+If the school has its own domain, the admin can enter it during setup or from general settings.
+- ⚠️ Requires proper DNS configuration
+- 🔧 Must point to server's IP address
+- ✅ Professional branding opportunity
 
-## Set Custom Domain on Server
+## 🖥️ Server Configuration
 
 ![e-School SaaS](../static/images/installation/setdomain.png)
 
-## Steps for Super Admin
+## 👨‍💻 Steps for Super Admin
 
-1. **Add Custom Domain to VPS:**
-   - Log into the VPS server.
-   - Configure the custom domain to work with the VPS server (e.g., by creating a virtual host).
+### 1️⃣ Add Custom Domain to VPS
+- 🔐 Log into the VPS server
+- ⚙️ Configure the custom domain to work with the VPS server
+- 🏗️ Create a virtual host configuration
 
-2. **Enable SSL:**
-   - Install and enable SSL for the custom domain using tools like Let's Encrypt or a paid SSL certificate.
+### 2️⃣ Enable SSL Certificate
+- 🔒 Install SSL for the custom domain
+- 🆓 Use Let's Encrypt for free SSL
+- 💳 Or install a paid SSL certificate
 
-## Steps for School Admin
+## 🏫 Steps for School Admin
 
-1. **Get VPS Server IP Address:**
-   - Ensure the VPS server's IP address is visible to the School Admin in the "General Settings" section when they select the "Custom Domain" options.
+### 1️⃣ Get Server Information
+- 📍 Find the VPS server's IP address
+- 🔍 Check "General Settings" section
+- 📋 Note the IP when selecting "Custom Domain" option
 
-2. **Update DNS Settings:**
-   - Log into your domain provider's dashboard.
-   - Add a DNS record (usually an A record) pointing the custom domain to the VPS server's IP address.
+### 2️⃣ Update DNS Settings
+- 🌐 Log into your domain provider's dashboard
+- ➕ Add a DNS A record
+- 🎯 Point the custom domain to the VPS server's IP address
 
-3. **Wait for Propagation:**
-   - DNS changes may take a few minutes to a few hours to propagate. 
+### 3️⃣ Wait for DNS Propagation
+- ⏰ DNS changes may take a few minutes to hours
+- 🔄 Propagation time varies by provider
+- 🧪 Test the domain after propagation
+
+## ✅ Verification Steps
+
+1. 🌐 **Check Domain Resolution**
+   - Use online DNS checker tools
+   - Verify A record points to correct IP
+
+2. 🔒 **Test SSL Certificate**
+   - Ensure HTTPS works properly
+   - Check for security warnings
+
+3. 📱 **Test School Access**
+   - Verify school website loads correctly
+   - Check all features work properly
+
+## 📝 Important Notes
+
+- 🕐 DNS propagation can take up to 48 hours
+- 🔄 Clear browser cache if domain doesn't load
+- 📞 Contact support if issues persist
+- 🔐 Always use HTTPS for security 

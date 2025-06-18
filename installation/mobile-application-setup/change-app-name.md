@@ -1,13 +1,21 @@
----
-sidebar_position: 6
----
+# 📱 Change App Name
 
-# Change App Name
+## 📋 Overview
+Learn how to customize your app's display name for both Android and iOS platforms.
 
-For Android, go to `android/app/src/main/AndroidManifest.xml` and change the app name as shown in image. Replace the selected eschool text with your school name.
+## 🔄 Steps to Change Name
 
-![e-School SaaS](../../static/images/installation/app/androidAppName.png)
+### 1️⃣ Android App Name
+1. Open `android/app/src/main/AndroidManifest.xml`
+2. Locate the `android:label` attribute
+3. Update the value with your desired app name
 
-For iOS open this project in Xcode and enter your app name in display name field as shown in image.
+### 2️⃣ iOS App Name
+1. Open `ios/Runner/Info.plist`
+2. Find the `CFBundleName` key
+3. Update the value with your desired app name
 
-![e-School SaaS](../../static/images/installation/app/iosAppName.png) 
+## 📝 Notes
+- Keep the name concise and memorable
+- Test the app after changing the name
+- Ensure the name follows platform guidelines 

@@ -1,8 +1,38 @@
----
-sidebar_position: 12
----
+# 🚀 Generate Release Version
 
-# Generate Release Version
+## 📋 Overview
+Learn how to create release versions of your app for both Android and iOS platforms.
+
+## 🔄 Steps to Generate Release
+
+### 1️⃣ Android Release
+1. Update version in `pubspec.yaml`
+2. Run build command:
+   ```bash
+   flutter build appbundle
+   ```
+3. Find the bundle at `build/app/outputs/bundle/release/app-release.aab`
+
+### 2️⃣ iOS Release
+1. Update version in Xcode
+2. Run build command:
+   ```bash
+   flutter build ios
+   ```
+3. Archive and upload through Xcode
+
+## ⚠️ Important Notes
+- Sign your app with release keys
+- Test release version thoroughly
+- Keep release keys secure
+- Follow platform guidelines
+
+## 📝 Pre-release Checklist
+- [ ] Version numbers updated
+- [ ] App icons and splash screen set
+- [ ] All features tested
+- [ ] Release notes prepared
+- [ ] Privacy policy updated
 
 ## Create and add Key Store file for Android:
 

@@ -1,23 +1,27 @@
----
-sidebar_position: 3
----
+# 🔥 Integrate with Firebase
 
-# Integrate with Firebase
+## 📋 Overview
+Learn how to set up Firebase services for your e-School mobile app.
 
-1. **Create firebase project in your account**
+## 🔄 Integration Steps
 
-   ![e-School SaaS](../../static/images/installation/app/createFirebase1.jpg)
+### 1️⃣ Firebase Project Setup
+1. Create a new Firebase project
+2. Add Android and iOS apps
+3. Download configuration files
 
-   ![e-School SaaS](../../static/images/installation/app/createFirebase2.jpg)
+### 2️⃣ Android Configuration
+1. Place `google-services.json` in `android/app/`
+2. Update `build.gradle` files
+3. Add Firebase dependencies
 
-   ![e-School SaaS](../../static/images/installation/app/createFirebase3.jpg)
+### 3️⃣ iOS Configuration
+1. Place `GoogleService-Info.plist` in `ios/Runner/`
+2. Update Podfile
+3. Run pod install
 
-   ![e-School SaaS](../../static/images/installation/app/createFirebase4.jpg)
-
-2. **To setup the firebase in your flutter app, please follow the steps given in the following link:**
-
-   [https://firebase.google.com/docs/flutter/setup](https://firebase.google.com/docs/flutter/setup)
-
-3. **To setup notification settings in iOS, please follow the steps given in the following link:**
-
-   [https://firebase.flutter.dev/docs/messaging/apple-integration](https://firebase.flutter.dev/docs/messaging/apple-integration) 
+## 📝 Notes
+- Keep Firebase config files secure
+- Test push notifications
+- Monitor Firebase console
+- Update Firebase SDK regularly 

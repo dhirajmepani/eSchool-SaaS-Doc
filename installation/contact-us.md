@@ -2,12 +2,24 @@
 sidebar_position: 9
 ---
 
-# Contact Us
+# 📞 Contact Us
 
-WRTeam has creative and dedicated group of developers who are mastered in Apps Developments and Web Application Development with a niche in delivering quality solutions to customers across the globe. Contact us today to find out how we can help you or for freelance work.
+## 👥 About WRTeam
 
-Visit Us: [https://wrteam.in](https://wrteam.in)
+WRTeam has a creative and dedicated group of developers who are mastered in **Apps Development** and **Web Application Development** with a niche in delivering quality solutions to customers across the globe.
 
-Mail Us: [support@wrteam.in](mailto:support@wrteam.in)
+## 🤝 Get in Touch
 
-Thank you very much. 
+Contact us today to find out how we can help you or for freelance work:
+
+### 🌐 Visit Us
+[https://wrteam.in](https://wrteam.in)
+
+### 📧 Email Us
+[support@wrteam.in](mailto:support@wrteam.in)
+
+---
+
+## 🙏 Thank You
+
+Thank you very much for choosing our services! We look forward to working with you. ✨ 

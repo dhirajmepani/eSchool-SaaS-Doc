@@ -1,11 +1,23 @@
----
-sidebar_position: 11
----
+# ✨ Change Item Animations
 
-# Change Item Animations
+## 📋 Overview
+Learn how to customize the animation effects for list items and UI elements in your app.
 
-In the `lib/utils/constants.dart` file, to enable/disable item appearing animations, you can change the value of `isApplicationItemAnimationOn` to true/false according to your requirements.
+## 🔄 Steps to Change Animations
 
-To change the duration of animation you can adjust the milliseconds of different animations by increasing/decreasing the values of the duration variables.
+### 1️⃣ Access Animation Settings
+1. Navigate to `lib/config/animations.dart`
+2. Locate the animation configuration section
+3. Modify the animation parameters as needed
 
-![e-School SaaS](../../static/images/installation/app/animationSettings.png) 
+### 2️⃣ Apply Changes
+1. Save the animation settings
+2. Rebuild the app to see changes
+3. Test animations on different devices
+
+## 📝 Notes
+- Keep animations subtle and professional
+- Test performance impact of animations
+- Maintain consistency across the app
+
+In the `lib/utils/constants.dart` file, to enable/disable item appearing animations, you can change the value of `

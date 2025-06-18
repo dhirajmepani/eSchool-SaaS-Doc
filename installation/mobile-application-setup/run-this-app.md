@@ -2,14 +2,30 @@
 sidebar_position: 7
 ---
 
-# Run This App
+# 🚀 Run This App
 
-Open your terminal, navigate to your project path and execute the following command to run this app:
+## 📋 Overview
+Learn how to run and test the e-School mobile app in development mode.
 
-```bash
-flutter run
-```
+## 🔄 Steps to Run
 
-Go to README.md file to check all the commonly used commands to fix issues that you may encounter while running the app. You'll also be able to run the shell script directly if you're using Android Studio.
+### 1️⃣ Initial Setup
+1. Install Flutter SDK
+2. Set up development environment
+3. Clone the repository
+
+### 2️⃣ Run the App
+1. Open project in IDE
+2. Run `flutter pub get`
+3. Start the app:
+   ```bash
+   flutter run
+   ```
+
+## 📝 Notes
+- Ensure all dependencies are installed
+- Check device/emulator connection
+- Monitor debug console
+- Test on both platforms
 
 ![e-School SaaS](../../static/images/installation/app/commandList.png) 

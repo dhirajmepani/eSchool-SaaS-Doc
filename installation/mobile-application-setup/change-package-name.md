@@ -1,32 +1,26 @@
----
-sidebar_position: 2
----
+# 📦 Change Package Name
 
-# Change Package Name
+## 📋 Overview
+Learn how to customize your app's package name for both Android and iOS platforms.
 
-1. Unzip the downloaded code. After unzipping you will have e-School SaaS - Flutter Code zip folder. Unzip that folder and open it in Android Studio or Visual Studio Code.
+## 🔄 Steps to Change Package Name
 
-2. Open IDE terminal, go to your project path and execute command:
-   ```bash
-   flutter pub get
-   ```
+### 1️⃣ Android Package Name
+1. Open `android/app/build.gradle`
+2. Update `applicationId` with your new package name
+3. Update package name in `AndroidManifest.xml`
 
-3. If you are running this app for iOS then run these following commands in terminal:
-   ```bash
-   cd ios
-   pod install
-   cd ..
-   ```
+### 2️⃣ iOS Bundle Identifier
+1. Open `ios/Runner.xcodeproj`
+2. Update Bundle Identifier in project settings
+3. Update `Info.plist` if needed
 
-4. Change package name of Android app  
-   Execute this command in your terminal:
-   ```bash
-   flutter pub run change_app_package_name:main your_new_package_name
-   ```
+## ⚠️ Important Notes
+- Package name must be unique
+- Follow platform naming conventions
+- Update all references to old package name
+- Test app thoroughly after changes
 
-   ![e-School SaaS](../../static/images/installation/app/changePackageName.png)
-
-5. Change package name of iOS app  
-   Open iOS folder of this project in Xcode. Go Select Runner->Targets->General->Identity and enter new package name in Build Identifier.
-
-   ![e-School SaaS](../../static/images/installation/app/changePackageName1.png) 
+## 🔧 Example Package Names
+- Android: `com.yourcompany.eschool`
+- iOS: `com.yourcompany.eschool` 
