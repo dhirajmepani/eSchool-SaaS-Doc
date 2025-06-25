@@ -11,7 +11,7 @@ It's our pleasure to serve and support our customers! We're here to help you wit
 ## 👨‍💻 Customer Support Team
 
 **Customer Support Head for e-School SaaS:**  
-🎧 [Bhavik WRTeam](https://join.skype.com/invite/u6fax2p0rsQL)
+🎧 [Bhavik WRTeam](https://teams.live.com/l/invite/FEAozVbIMycxWy0dA0)
 
 ## 📞 Support Hours
 
@@ -24,11 +24,6 @@ We offer customer support during the following hours:
 ## 📧 How We Help
 
 To help our customers, we constantly stay in touch with every customer who needs assistance regarding our product.
-
-### 📝 Support Channels
-- 💬 **Comments** – Direct feedback on product pages
-- 🏛️ **Support Forum** – Community discussions
-- 📧 **Email Support** – Direct email assistance
 
 ### ⚡ Response Time
 - 🚀 **Typical Response:** Within 24 hours
